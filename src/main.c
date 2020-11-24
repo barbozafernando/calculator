@@ -1,8 +1,24 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+// Prototypes
+void print_header(void);
+
 
 int main()
 {
-	printf("Hello world!");
+    print_header();
 
-	return 0;
+    printf("Hi!");
+
+
+    return 0;
+}
+
+void print_header(void)
+{
+    printf("\n**********************************\n");
+    printf("\n*********** CALCULATOR ***********\n");
+    printf("\n**********************************\n");
+    return;
 }

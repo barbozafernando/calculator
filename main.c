@@ -54,10 +54,8 @@ int print_options(void)
     	scanf("%d", &number2);
 
         fflush(stdin);
-
-    	result = sum(number1, number2);
         
-        return result;
+        return sum(number1, number2);
     }
 
     if (option == 2){
@@ -67,10 +65,8 @@ int print_options(void)
     	scanf("%d", &number2);
 
         fflush(stdin);
-
-    	result = sub(number1, number2);
         
-        return result;
+        return sub(number1, number2);
     }
 
     if (option == 3){
@@ -80,10 +76,8 @@ int print_options(void)
     	scanf("%d", &number2);
 
         fflush(stdin);
-
-    	result = multi(number1, number2);
         
-        return result;
+        return multi(number1, number2);
     }
 
     if (option == 4){
@@ -93,10 +87,8 @@ int print_options(void)
     	scanf("%d", &number2);
 
         fflush(stdin);
-
-    	result = division(number1, number2);
         
-        return result;
+        return division(number1, number2);
     }
 
     return result;

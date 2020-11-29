@@ -5,21 +5,84 @@
 #include "multiplication.h"
 #include "division.h"
 
-
 // Prototypes
 void print_header(void);
-int print_options(void);
 
 int main()
 {
-    int selected_option;
+    int option = 0;
+    int result;
+    int number1, number2;
 
-    print_header();
-    selected_option = print_options();
+    do
+    {
+        print_header();
 
-    printf("The answer is: %d", selected_option);
+        printf("Pick an option: \n");
+        printf("1 - Sum \n");
+        printf("2 - Subtraction \n");
+        printf("3 - Multiplication \n");
+        printf("4 - Division \n");
+        printf("5 - Quit \n\n");
+
+        scanf(" %d", &option);
+        fflush(stdin);
+
+        system("cls");
+
+        if (option == 5)
+        {
+            printf("Bye! :) \n");
+            system("pause");
+            return 0;
+        }
+
+        printf("\n");
+
+        printf("Type the first value: \n");
+        scanf(" %d", &number1);
+
+        printf("Type the second value: \n");
+        scanf(" %d", &number2);
+
+        fflush(stdin);
+
+        printf("\n");
+
+        switch(option) 
+        {
+            case 1:
+                printf("Result is: %d \n", sum(number1, number2));
+                system("pause");
+                break;
+
+            case 2:
+                printf("Result is: %d \n", sub(number1, number2));
+                system("pause");
+                break;
+
+            case 3:
+                printf("Result is: %d \n", multi(number1, number2));
+                system("pause");
+                break;
+
+            case 4:
+                printf("Result is: %d \n", division(number1, number2));
+                system("pause");
+                break;
+
+            default:
+                break;
+        }
+
+        printf("\n");
+
+    } while (option != 5);
+
 
     return 0;
+
+    
 }
 
 void print_header(void)
@@ -29,69 +92,6 @@ void print_header(void)
     printf("*********** CALCULATOR ***********\n");
     printf("**********************************\n");
     return;
-}
-
-int print_options(void)
-{
-	int option;
-	int number1, number2, result;
-
-	printf("Pick an option: \n");
-    printf("1 - Sum \n");
-    printf("2 - Subtraction \n");
-    printf("3 - Multiplication \n");
-    printf("4 - Division \n");
-
-    scanf("%d", &option);
-    fflush(stdin);
-
-    if (option == 1){
-
-    	printf("Type the first value: \n");
-    	scanf("%d", &number1);
-
-    	printf("Type the second value: \n");
-    	scanf("%d", &number2);
-
-        fflush(stdin);
-        
-        return sum(number1, number2);
-    }
-
-    if (option == 2){
-    	printf("Type the first value: \n");
-    	scanf("%d", &number1);
-    	printf("Type the second value: \n");
-    	scanf("%d", &number2);
-
-        fflush(stdin);
-        
-        return sub(number1, number2);
-    }
-
-    if (option == 3){
-    	printf("Type the first value: \n");
-    	scanf("%d", &number1);
-    	printf("Type the second value: \n");
-    	scanf("%d", &number2);
-
-        fflush(stdin);
-        
-        return multi(number1, number2);
-    }
-
-    if (option == 4){
-    	printf("Type the first value: \n");
-    	scanf("%d", &number1);
-    	printf("Type the second value: \n");
-    	scanf("%d", &number2);
-
-        fflush(stdin);
-        
-        return division(number1, number2);
-    }
-
-    return result;
 }
 
 

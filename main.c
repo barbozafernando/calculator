@@ -1,22 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "sum.h"
-#include "sub.h"
-#include "multiplication.h"
-#include "division.h"
-
-// Prototypes
-void print_header(void);
+#include "calculator.h"
 
 int main()
 {
     int option = 0;
-    int result;
-    int number1, number2;
+    int result = 0;
+    int result_ptr = &result;
+    int number1, 
+        number2;
 
     do
     {
-        print_header();
+        void print_header();
 
         printf("Pick an option: \n");
         printf("1 - Sum \n");
@@ -28,7 +24,7 @@ int main()
         scanf(" %d", &option);
         fflush(stdin);
 
-        system("cls");
+        // system("cls");
 
         if (option == 5)
         {
@@ -52,22 +48,26 @@ int main()
         switch(option) 
         {
             case 1:
-                printf("Result is: %d \n", sum(number1, number2));
+                result = sum(number1, number2);
+                printf("Result is: %d \n", result);
                 system("pause");
                 break;
 
             case 2:
-                printf("Result is: %d \n", sub(number1, number2));
+                result = sub(number1, number2);
+                printf("Result is: %d \n", result);
                 system("pause");
                 break;
 
             case 3:
-                printf("Result is: %d \n", multi(number1, number2));
+                result = multi(number1, number2);
+                printf("Result is: %d \n", result);
                 system("pause");
                 break;
 
             case 4:
-                printf("Result is: %d \n", division(number1, number2));
+                result = division(number1, number2);
+                printf("Result is: %d \n", result);
                 system("pause");
                 break;
 
@@ -84,14 +84,3 @@ int main()
 
     
 }
-
-void print_header(void)
-{
-    system("cls");
-    printf("**********************************\n");
-    printf("*********** CALCULATOR ***********\n");
-    printf("**********************************\n");
-    return;
-}
-
-

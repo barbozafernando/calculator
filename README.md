@@ -1,6 +1,5 @@
 <p align="center">
-  <b>Calculator</b> is just a simple project to understand and practice the C language. </br>
-  It was inspired on this repo: https://github.com/tastejs/awesome-app-ideas#calculator.
+  <b>Calculator</b> is just a simple project to practice the C language. </br>
 </p>
 
 <p align="center">
